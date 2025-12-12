@@ -3,64 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Treact Project</title>
   <link rel="stylesheet" href="styles.css">
-  <script>
-
-  </script>
-  <script src="app.js" defer></script>
+  <script src="https://kit.fontawesome.com/2039be61be.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <section id="landing">
     <nav>
-      <div class="row nav-row">
+      <div class="row nav__row">
         <div class="nav__logo">
-          <img src="./assets/logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="Treact logo">
+          <img src="./assets/logo.2c489fc453a1783cbadacf914efa3df6.svg" alt="Treact logo" class="nav__logo--img">
+          <div class="nav__logo--title">Treact</div>
         </div>
         <div class="nav__links">
           <a href="#" class="nav__link">About</a>
           <a href="#" class="nav__link">Blog</a>
-          <a href="#" class="nav__link">Pricing</a>
+          <a href="#" class="nav__link">Price</a>
           <a href="#" class="nav__link">Contact Us</a>
-          <a href="#" class="nav__link">Login</a>
-          <a href="#" class="nav__link nav__link--primary">Sign Up</a>
+          <a href="#" class="nav__link login">Login</a>
+          <a href="#" class="nav__link nav__link--primary"><button>Sign Up</button></a>
         </div>
-        <btton class="btn__menu">
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </nav>
-    <div class="model">
-      <btton class="btn__menu btn__menu--close">
-
-      </btton>
+    <div class="modal">
+      <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+      <div class="modal__links">
+        <a class="modal__link">About</a>
+        <a class="modal__link">Blog</a>
+        <a class="modal__link">Pricing</a>
+        <a class="modal__link">Contact Us</a>
+        <a class="modal__link">Login</a>
+        <a class="modal__link modal__link--primary">Sign Up</a>
+      </div>
     </div>
-    <div class="modal__links">
-      <a href="#" class="modal__link">About</a>
-      <a href="#" class="modal__link">Blog</a>
-      <a href="#" class="modal__link">Pricing</a>
-      <a href="#" class="modal__link">Contact Us</a>
-      <a href="#" class="modal__link">Login</a>
-      <a href="#" class="modal__link modal__link--primary">Sign Up</a>
-    </div>
-    <header>
-      <div class="container">
-        <div class="row">
-          <div class="header__content">
-            <h1>Beautiful React Templates <span class="purple">for you.</span></h1>
-            <p>Our templates are easy to setup, understand, and customize. Fully modular components with a variety of pages and components.</p>
-
-            <figure class="img">
-
-            </figure>
-          </div>
-          <div class="header__img">
-            <figure class="header__img--wrapper">
-              <img src="./assets/design-illustration-2.6da6a00b20c07c4a9b65d1870679e1b8.svg" alt="">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="header__description">
+              <h1>Beautiful React Templates <span class="purple">for you.</span></h1>
+              <p class="header__description--para">Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.</p>
+              <div class="header__email">
+                <input type="text" class="header__email--input" placeholder="Your E-mail Address">
+                <button class="header__email--btn">Get Started</button>
+              </div>
+              <p class="header__customers--title">OUR TRUSTED CUSTOMERS</p>
+              <img src="./assets/customers-logo-strip.680ac7c2e8ae28161d2c.png" alt="Customers logos" class="header__customers--image">
+            </div>
+            <figure class="header__image--wrapper">
+              <img src="" alt="landing image" class="header__image">
             </figure>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
   </section>
+  <main>
+    <section id="features">
+      <div class="container">
+        <div class="row__narrow">
+          
+        </div>
+      </div>
+    </section>
+    <section id="quality">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <section id="steps">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <section id="values">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <section id="pricing">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <section id="testimonials">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <section id="start">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="row footer__row">
+      
+    </div>
+  </footer>
 </body>
 </html>
