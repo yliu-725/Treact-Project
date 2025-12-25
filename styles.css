@@ -21,7 +21,7 @@ nav {
   padding-top: 32px;
 }
 
-header{
+header {
   ?osition: relative;
 }
 
@@ -61,6 +61,20 @@ button {
   display: none;
 }
 
+.btn {
+  background-color: #6415ff;
+  padding: 12px 32px;
+  border-radius: 500px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgba(80, 17, 204);
+}
+
 .modal {
   display: none;
 }
@@ -94,6 +108,7 @@ button {
 }
 
 .section__title {
+  font-size: 48px;
   font-weight: 900;
   line-height: 1.5;
   color: rgb(36, 62, 99);
@@ -299,8 +314,8 @@ header .row {
   align-items: center;
 }
 
-#features .section__title, #pricing .section__title {
-  font-size: 48px;
+#features .section__title,
+#pricing .section__title {
   text-align: center;
 }
 
@@ -337,8 +352,54 @@ header .row {
   height: 24px;
 }
 
+.feature__text {
+  margin-top: 8px;
+  margin-left: 16px;
+}
 
+.feature__para {
+  margin-top: 16px;
+  font-size: 16px;
+  color: rgb(124, 139, 161);
+  line-height: 2;
+  font-weight: 500;
+}
 
+/* QUALITY SECTION */
+
+#quality .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quality__description,
+.quality__img--wrapper {
+  width: 50%;
+}
+
+.quality__description {
+  max-width: 576px;
+  margin-right: 64px;
+}
+
+#quality .section__title,
+#values .section__title {
+  line-height: 1.25;
+}
+
+#quality .btn {
+  margin-top: 32px;
+}
+
+.quality__img--wrapper {
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 4px;
+  margin: 0 56px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
 
 /* MEDIA QUERIES */
 
@@ -378,14 +439,16 @@ header .row {
     align-items: center;
   }
 
-  .header__description, .header__img--wrapper {
+  .header__description,
+  .header__img--wrapper {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .header__description, .header__img--wrapper {
+  .header__description,
+  .header__img--wrapper {
     width: 100%;
     max-width: 512px;
     margin: 0 auto;
@@ -399,12 +462,22 @@ header .row {
     padding-right: 0px;
   }
 
-  .header__customers--title, .header__img--wrapper {
+  .header__customers--title,
+  .header__img--wrapper {
     margin-top: 48px;
+  }
+
+  .section__title {
+    font-size: 36px;
   }
 
   .section__para {
     font-size: 16px;
+  }
+
+  #features .section__title,
+  #pricing .section__title {
+    font-size: 48px;
   }
 
   .features {
@@ -418,5 +491,127 @@ header .row {
   .feature__row {
     padding: 32px 8px;
     margin: 0 16px;
+  }
+
+  .feature__title {
+    line-height: 1;
+  }
+
+  .quality__description {
+    margin-right: 0;
+    padding-right: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-bottom: 80px;
+  }
+
+  .nav__logo {
+    margin: 8px 0;
+    padding-bottom: 4px;
+  }
+
+  .container {
+    padding: 80px 0;
+  }
+
+  .btn {
+    line-height: 1.5;
+  }
+
+  .header__email {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header__email--input {
+    position: static;
+    padding: 16px 0;
+    padding-left: 32px;
+    line-height: 1.5;
+  }
+
+  .header__email--btn {
+    width: 100%;
+    padding: 16px 0;
+    margin: 16px 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .header__customers--title {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .section__title {
+    line-height: 1.25;
+    font-size: 30px;
+  }
+
+  .section__para {
+    font-size: 14px;
+  }
+
+  #features .section__title,
+  #pricing .section__title {
+    font-size: 36px;
+  }
+
+  .features {
+    justify-content: center;
+  }
+
+  .feature {
+    width: auto;
+    max-width: 384px;
+  }
+
+  .feature__row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature__text {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .feature__title {
+    letter-spacing: 0.025em;
+    line-height: 1;
+  }
+
+  .feature__para {
+    margin-top: 4px;
+    line-height: 2;
+  }
+
+  #quality .row {
+    flex-direction: column-reverse;
+  }
+
+  .quality__description,
+  .quality__img--wrapper,
+  .steps__description,
+  .steps__img--wrapper,
+  .values__description,
+  .values__img,
+  .testimonials__description,
+  .testimonials__img {
+    width: 100%;
+    max-width: 448px;
+  }
+
+  .quality__description,
+  .steps__description,
+  .values__description,
+  .testimonials__description {
+    padding: 0;
+    margin-top: 64px;
+    text-align: center;
   }
 }
