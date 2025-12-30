@@ -558,7 +558,7 @@ header .row {
 .value__para {
   margin-top: 16px;
   line-height: 1.625;
-  color: #718096
+  color: #718096;
 }
 
 #values .btn {
@@ -592,7 +592,79 @@ header .row {
 }
 
 .plan {
+  position: relative;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
 
+.plan__stripe {
+
+}
+
+.plan__top {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  text-transform: uppercase;
+  line-height: 1.625; 
+}
+
+.plan__name {
+  font-size: 20px;
+}
+
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.plan__name, .plan__price, .plan__duration {
+  font-weight: bold;
+  line-height: 1.625;
+}
+
+.plan:nth-child(odd) .plan__name,
+.plan:nth-child(odd) .plan__price,
+.plan:nth-child(odd) .plan__target {
+  color: #1a202c;
+}
+
+.plan:nth-child(odd) .plan__duration {
+  color: #a0aec0;
+}
+
+.plan__middle {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.plan:nth-child(odd) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+
+.plan__target {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+.plan__feature {
+  margin-top: 20px;
+  font-weight: 500;
+  color: #718096;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 
@@ -646,6 +718,10 @@ header .row {
 
   .testimonials__description {
     width: calc(100% - 40%);
+  }
+
+  .plan__bottom {
+    
   }
 }
 
