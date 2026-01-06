@@ -209,7 +209,7 @@ button {
   transition: all 0.3s ease;
 }
 
-.btn__menu:hover .btn__menu--svg {
+.btn__menu--svg:hover {
   filter: invert(26%) sepia(94%) saturate(7476%) hue-rotate(261deg)
     brightness(94%) contrast(115%);
 }
@@ -219,23 +219,17 @@ button {
   top: 0;
   left: 0;
   right: 0;
-  height: 400px;
+  height: 378px;
   margin: 24px 16px;
   padding: 32px;
   background-color: #fff;
   border: 1px solid rgb(229, 231, 235);
   border-radius: 8px;
-  z-index: 4;
+  z-index: 5;
+  transform: translateX(100%);
   visibility: hidden;
   opacity: 0;
-  transform: translateX(300%);
-  transition: all 300ms ease;
-}
-
-.menu--open .menu {
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(0);
+  transition: all 0.3s ease;
 }
 
 .btn__menu--close {
@@ -265,9 +259,20 @@ button {
 .menu__link--primary {
   color: #f7fafc;
   padding: 12px 32px;
-  background: #6415ff;
+  background-color: #6415ff;
   border-radius: 500px;
   border: none;
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu--open .menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* HEADER */
@@ -650,28 +655,28 @@ header .row {
 }
 
 .plans {
-  display: flex;
   position: relative;
+  display: flex;
   flex-direction: row;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .plan {
   position: relative;
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 24rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  border-radius: 0.5rem;
   background-color: rgb(255, 255, 255);
-  padding-left: 2rem;
-  padding-right: 2rem;
+  color: rgb(26, 32, 44);
+  margin-top: 4rem;
   margin-right: 2rem;
   padding-top: 0.5rem;
-  border-radius: 0.5rem;
-  color: rgb(26, 32, 44);
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
@@ -686,32 +691,27 @@ header .row {
   border-top-right-radius: 0.5rem;
 }
 
-.plan:nth-child(1) .plan__stripe {
+.plan:nth-child(1) .plan__stripe,
+.plan:nth-child(1) .plan__btn {
   color: #f7fafc;
-  background-color: rgb(129, 230, 217);
+  background: linear-gradient(
+    115deg,
+    rgb(56, 178, 172) 0%,
+    rgb(129, 230, 217) 100%
+  );
 }
 
 .plan__top {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   text-transform: uppercase;
   line-height: 1.625;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .plan__name {
   font-size: 20px;
-}
-
-.plan__price {
-  font-size: 48px;
-  margin: 4px 0;
-}
-
-.plan__duration {
-  font-size: 16px;
-  letter-spacing: 0.1em;
 }
 
 .plan__name,
@@ -727,6 +727,16 @@ header .row {
   color: #1a202c;
 }
 
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
 .plan:nth-child(odd) .plan__duration {
   color: #a0aec0;
 }
@@ -734,14 +744,13 @@ header .row {
 .plan__middle {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  flex: 1 1 0%;
   margin-left: -2rem;
   margin-right: -2rem;
-  flex: 1 1 0%;
-  padding: 2rem;
 }
 
-.plan:nth-child(1) .plan__middle,
-.plan:nth-child(3) .plan__middle {
+.plan:nth-child(odd) .plan__middle {
   border-top: 2px solid rgb(229, 231, 235);
   border-bottom: 2px solid rgb(229, 231, 235);
 }
@@ -766,38 +775,71 @@ header .row {
 }
 
 .plan__btn {
+  width: 100%;
   border-radius: 9999px;
   background-color: rgb(100, 21, 255);
-  padding: 0.75rem 2rem;
-  font-weight: 700;
   color: rgb(247, 250, 252);
-  width: 100%;
+  padding: 0.75rem 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  font-weight: 700;
   font-size: 0.875rem;
-  letter-spacing: 0.05em;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: all 0.3s ease;
 }
 
 .plan__btn:hover {
   transform: translate(1px, -1px);
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-    rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
-.plan:nth-child(2) .plan__stripe {
-  background-color: rgb(76, 81, 191);
+.plan:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgb(76, 81, 191) 0%,
+    rgb(102, 126, 234) 100%
+  );
 }
 
-.plan.plan:nth-child(2) .plan__middle {
+.plan:nth-child(2) .plan__name,
+.plan:nth-child(2) .plan__price,
+.plan:nth-child(2) .plan__target,
+.plan:nth-child(2) .plan__duration,
+.plan:nth-child(2) .plan__feature {
+  color: #f7fafa;
+}
+
+.plan:nth-child(2) .plan__middle {
   border-top: 2px solid rgb(102, 126, 234);
   border-bottom: 2px solid rgb(102, 126, 234);
 }
 
-.plan:nth-child(3) .plan__stripe {
-  background-color: rgb(245, 101, 101);
+.plan:nth-child(2) .plan__btn {
+  color: rgb(100, 21, 255);
+  background-color: rgb(247, 250, 252);
+}
+
+.plan:nth-child(3) .plan__stripe,
+.plan:nth-child(3) .plan__btn {
+  color: #f7fafc;
+  background: linear-gradient(
+    115deg,
+    rgb(245, 101, 101) 0%,
+    rgb(254, 178, 178) 100%
+  );
+}
+
+.plans__blob {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(-50%, 50%) scale(1);
+  z-index: -10;
+  width: 256px;
+  height: 256px;
+  opacity: 0.25;
 }
 
 /* TESTIMONIALS SECTION */
@@ -1223,7 +1265,7 @@ footer {
     padding-right: 2rem;
   }
 
-  .plan__button {
+  .plan__btn {
     max-width: none;
   }
 }
